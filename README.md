@@ -5,7 +5,7 @@
 
 ## Project Links
 - GitHub Repository: https://github.com/NatchanonPhochai1262/NatchanonPhochai
-- วิดีโอแนะนำ Project : Coming soon
+- วิดีโอแนะนำ Project : [คลิปสอนใช้](https://youtu.be/1ZmZuAdfAhA)
 
 ---
 
