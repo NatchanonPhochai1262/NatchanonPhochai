@@ -1,0 +1,256 @@
+import { StyleSheet, Platform, StatusBar } from 'react-native';
+
+export const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#F8F9FB',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
+  container: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 16,
+  },
+  headerContainer: {
+    marginBottom: 16,
+  },
+  titleText: {
+    fontSize: 26,
+    fontFamily: 'Kanit_700Bold',
+    color: '#161C24',
+  },
+  subtitleText: {
+    fontSize: 14,
+    fontFamily: 'Kanit_400Regular',
+    color: '#919EAB',
+    marginTop: 2,
+  },
+
+  // 📅 Date Selector Box
+  dateSelectorCard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderWidth: 1,
+    borderColor: '#EBF0F5',
+    marginBottom: 14,
+  },
+  dateSelectorLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  dateSelectorLabel: {
+    fontSize: 14,
+    fontFamily: 'Kanit_600SemiBold',
+    color: '#161C24',
+  },
+  dateDropdownButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFF0ED',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 10,
+    gap: 6,
+  },
+  dateDropdownText: {
+    fontSize: 13,
+    fontFamily: 'Kanit_600SemiBold',
+    color: '#FF5722',
+  },
+
+  // 🔍 Search Bar
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    height: 48,
+    borderWidth: 1,
+    borderColor: '#EBF0F5',
+    marginBottom: 14,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    fontFamily: 'Kanit_400Regular',
+    color: '#161C24',
+  },
+
+  // 🏷️ Categories
+  categoryScrollContent: {
+    gap: 8,
+    alignItems: 'center',
+  },
+  categoryChip: {
+    paddingHorizontal: 18,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#EBF0F5',
+  },
+  categoryChipActive: {
+    backgroundColor: '#FF5722',
+    borderColor: '#FF5722',
+  },
+  categoryText: {
+    fontSize: 13,
+    fontFamily: 'Kanit_500Medium',
+    color: '#919EAB',
+  },
+  categoryTextActive: {
+    color: '#FFFFFF',
+    fontFamily: 'Kanit_700Bold',
+  },
+
+  // 📋 Exercise List Card
+  foodListContent: {
+    paddingBottom: 100,
+  },
+  foodCardContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderWidth: 1,
+    borderColor: '#EBF0F5',
+  },
+  foodItemRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 14,
+  },
+  foodNameText: {
+    fontSize: 15,
+    fontFamily: 'Kanit_700Bold',
+    color: '#161C24',
+    marginBottom: 2,
+  },
+  foodCategoryText: {
+    fontSize: 12,
+    fontFamily: 'Kanit_400Regular',
+    color: '#919EAB',
+  },
+  foodRightSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  foodCalorieText: {
+    fontSize: 15,
+    fontFamily: 'Kanit_700Bold',
+    color: '#161C24',
+  },
+  addButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#FF5722',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemDivider: {
+    height: 1,
+    backgroundColor: '#F4F6F8',
+    width: '100%',
+  },
+
+  // 🧭 Bottom Tab Bar
+  bottomTabBar: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 70,
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderTopWidth: 1,
+    borderTopColor: '#F0F4F8',
+    paddingHorizontal: 10,
+  },
+  tabItem: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  tabLabel: {
+    fontSize: 11,
+    fontFamily: 'Kanit_400Regular',
+    color: '#8E8E93',
+    marginTop: 2,
+  },
+  tabLabelActive: {
+    color: '#FF5722',
+    fontFamily: 'Kanit_700Bold',
+  },
+  plusButtonOuter: {
+    top: -18,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  plusButtonInner: {
+    width: 54,
+    height: 54,
+    borderRadius: 27,
+    backgroundColor: '#FF5722',
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 8,
+  },
+
+  // 📐 Modal Style
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    justifyContent: 'flex-end',
+  },
+  dateModalCard: {
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    padding: 20,
+    paddingBottom: 30,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F4F6F8',
+  },
+  modalTitleText: {
+    fontSize: 18,
+    fontFamily: 'Kanit_700Bold',
+    color: '#161C24',
+  },
+  dateOptionItem: {
+    paddingVertical: 14,
+    alignItems: 'center',
+    borderRadius: 12,
+    marginBottom: 6,
+  },
+  dateOptionItemSelected: {
+    backgroundColor: '#FFF0ED',
+  },
+  dateOptionText: {
+    fontSize: 15,
+    fontFamily: 'Kanit_500Medium',
+    color: '#161C24',
+  },
+  dateOptionTextSelected: {
+    color: '#FF5722',
+    fontFamily: 'Kanit_700Bold',
+  },
+});

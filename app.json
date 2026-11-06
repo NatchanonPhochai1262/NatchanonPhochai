@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Calorie App",
+    "slug": "calorie-app",
+    "scheme": "calorieapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["android", "ios", "web"]
+  }
+}

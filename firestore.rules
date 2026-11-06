@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public food catalog: the app can display it, but only trusted
+    // admin accounts can create or modify catalog entries.
+    match /foodLogs/{foodId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // A signed-in user may access only their own profile and activity logs.
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId)
+        && request.resource.data.uid == userId;
+      allow update: if isOwner(userId)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['fullName', 'age', 'gender', 'height', 'weight', 'activity', 'tdee']);
+      allow delete: if isAdmin();
+
+      match /foodLogs/{logId} {
+        // สมาชิกจัดการได้เฉพาะ log ของตน; การแก้ไข log จำกัดให้ Admin เท่านั้น
+        allow read, create: if isOwner(userId) || isAdmin();
+        allow update: if isAdmin();
+        allow delete: if isOwner(userId) || isAdmin();
+      }
+
+      match /exerciseLogs/{logId} {
+        // สมาชิกจัดการได้เฉพาะ log ของตน; การแก้ไข log จำกัดให้ Admin เท่านั้น
+        allow read, create: if isOwner(userId) || isAdmin();
+        allow update: if isAdmin();
+        allow delete: if isOwner(userId) || isAdmin();
+      }
+    }
+
+    // Admin activity log: only admins may read or write entries.
+    match /adminActivityLogs/{logId} {
+      allow read, create: if isAdmin();
+      allow update, delete: if false;
+    }
+
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}
